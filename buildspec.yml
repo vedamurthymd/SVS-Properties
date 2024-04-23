@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+    commands:
+      - echo install process started
+      - yarn
+  build:
+    commands:
+      - echo build process started now
+      - yarn build
+  post_build:
+    commands:
+      - echo build process finished, we should uplload to S3 now
+
+artifacts:
+    files:
+      - '**/*'
+    base-directory: 'dist'
+    discard-paths: yes
